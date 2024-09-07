@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCO Bank Home Loan Eligibility Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('vibrant-background.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            border: 3px solid #000;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            margin: auto;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 150px;
+        }
+        h2 {
+            text-align: center;
+            color: #2d87f0;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9f5ff;
+            border-radius: 10px;
+        }
+        .result h3 {
+            margin: 5px 0;
+            color: #2d87f0;
+        }
+        .error, .success {
+            color: red;
+            font-weight: bold;
+        }
+        .success {
+            color: green;
+        }
+        button {
+            background-color: #2d87f0;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #1b5dbf;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="log.png" alt="FinLoans Logo">
+        </div>
+        <h2>UCO Bank Home Loan Eligibility Calculator</h2>
+
+        <div class="form-group">
+            <label for="age">Your Age (Years)</label>
+            <input type="number" id="age" placeholder="Enter your age" required>
+        </div>
+        <div class="form-group">
+            <label for="income">Monthly Net Income (₹)</label>
+            <input type="number" id="income" placeholder="Enter your monthly net income" required>
+        </div>
+        <div class="form-group">
+            <label for="existingEmi">Existing EMI Obligations (₹)</label>
+            <input type="number" id="existingEmi" placeholder="Enter existing EMI obligations" value="0">
+        </div>
+        <div class="form-group">
+            <label for="desiredLoan">Desired Loan Amount (₹)</label>
+            <input type="number" id="desiredLoan" placeholder="Enter desired loan amount" required>
+        </div>
+        <div class="form-group">
+            <label for="tenure">Desired Loan Tenure (Years)</label>
+            <input type="number" id="tenure" placeholder="Enter desired loan tenure in years" required>
+        </div>
+        <div class="form-group">
+            <label for="interestRate">Interest Rate (% per annum)</label>
+            <input type="number" step="0.01" id="interestRate" placeholder="Enter interest rate in decimals" value="8.5" required>
+        </div>
+
+        <button onclick="calculateEligibility()">Check Eligibility</button>
+
+        <div class="result" id="result">
+        </div>
+    </div>
+
+    <script src="eligibility-calculator.js"></script>
+</body>
+</html>
+
